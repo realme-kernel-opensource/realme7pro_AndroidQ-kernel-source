@@ -1,0 +1,37 @@
+config TOUCHIRQ_UPDATE_QOS
+	default y
+	bool "TP TOUCHIRQ_UPDATE enable QOS"
+	---help---
+	say Y to enable driver for Touchpanel using oppo_touchscreen
+
+config TOUCHPANEL_OPPO
+	default y
+	bool "TP oppo_touchscreen enable or not for OPPO"
+	---help---
+	say Y to enable driver for Touchpanel using oppo_touchscreen
+	
+source "drivers/input/touchscreen/lq/oppo_touchscreen/util_interface/Kconfig"
+
+config TOUCHPANEL_NOVA
+	default y
+	bool "TP Nova_IC enable or not for OPPO"
+	---help---
+	say Y to enable driver for Touchpanel using NOVATECK_IC
+
+source "drivers/input/touchscreen/lq/oppo_touchscreen/Novatek/Kconfig"
+
+config TOUCHPANEL_GOODIX
+	default y
+	bool "TP Goodix_IC enable or not for OPPO"
+	---help---
+	say Y to enable driver for Touchpanel using GOODIX_IC
+
+source "drivers/input/touchscreen/lq/oppo_touchscreen/Goodix/Kconfig"
+
+config TOUCHPANEL_FOCAL
+	default y
+	bool "TP FOCAL_IC enable or not for OPPO"
+	---help---
+	say Y to enable driver for Touchpanel using FOCAL_IC
+
+source "drivers/input/touchscreen/lq/oppo_touchscreen/Focal/Kconfig"

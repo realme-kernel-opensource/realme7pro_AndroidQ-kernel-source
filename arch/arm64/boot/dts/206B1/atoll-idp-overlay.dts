@@ -1,0 +1,52 @@
+/* Copyright (c) 2019, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+
+#include "atoll-idp.dtsi"
+#include "atoll-audio-overlay.dtsi"
+
+/*#ifdef ODM_LQ_EDIT*/
+/*qujiong@ODM_LQ@BSP.touch,2019/10/08,modified for bring up TP*/
+//#include "hx83112a-spi-touchscreen.dtsi"  //zhangchaofan@ODM_LQ@BSP.touch,2019/11/14
+/*endif ODM_LQ_EDIT*/
+
+/ {
+	model = "IDP";
+	compatible = "qcom,atoll-idp", "qcom,atoll", "qcom,idp";
+	qcom,msm-id = <407 0x0>;
+	qcom,board-id = <34 0>;
+	oppo,project = <132785>;
+};
+/*#ifndef ODM_LQ_EDIT*/
+/*zengjianxiong@ODM_LQ@Multimedia.Dispaly,2019/10/03,modified for bring up LCD*/
+/*&dsi_rm69299_visionox_amoled_vid_display {
+	qcom,dsi-display-active;
+};*/
+/*else ODM_LQ_EDIT*/
+&dsi_hx83112a_dsbj_vid_display {
+        qcom,dsi-display-active;
+ };
+/*#endif ODM_LQ_EDIT*/
+/*#ifdef ODM_TARGET_DEVICE_206B1*/
+/*zhangyang@ODM_LQ@Multimedia.Dispaly,2020/04/29,modified for bring up samsung ams643xf01 panel*/
+&dsi_ams643xf01_samsung_amoled_cmd_display {
+	qcom,dsi-display-active;
+};
+/*zhangyang@ODM_LQ@Multimedia.Dispaly,2020/05/26,modified for bring up samsung s6e8fc1x01 panel*/
+&dsi_s6e8fc1x01_samsung_amoled_video_display {
+	qcom,dsi-display-active;
+};
+/*#endif ODM_TARGET_DEVICE_206B1*/

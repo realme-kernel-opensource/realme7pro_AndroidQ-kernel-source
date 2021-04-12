@@ -1,0 +1,5 @@
+config OPPO_DUMP_DEVICE_INFO
+  bool "config oppo dump device info"
+  default y
+  help
+	define this config to  dump device info.

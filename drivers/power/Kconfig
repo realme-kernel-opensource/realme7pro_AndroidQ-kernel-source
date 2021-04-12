@@ -1,0 +1,88 @@
+#ifdef VENDOR_EDIT
+#/* Yichun.Chen  PSW.BSP.CHG  2019- */
+config OPPO_SM6250_CHARGER
+	tristate "CONFIG_OPPO_SM6250_CHARGER driver"
+	depends on MFD_SPMI_PMIC
+	help
+	  Enables support for the oppo charging framework
+
+	  
+config OPPO_SHORT_C_BATT_CHECK
+	tristate "OPPO_SHORT_C_BATT CHECK SUPPORT"
+	default n
+	depends on MFD_SPMI_PMIC
+	help
+	  Say Y to include support
+
+
+config OPPO_SMART_CHARGER_SUPPORT
+	bool "OPPO smart charger support"
+	help
+	  Say Y to include support
+
+
+
+
+
+
+
+config OPPO_RTC_DET_SUPPORT
+	tristate "OPPO RTC DET SUPPORT"
+	default n
+	depends on MFD_SPMI_PMIC
+	help
+	  Say Y to include support
+
+config OPPO_CHECK_CHARGERID_VOLT
+	tristate "OPPO CHECK CHARGERID VOLT"
+	default n
+	depends on MFD_SPMI_PMIC
+	help
+	  Say Y to include support
+
+config OPPO_SHIP_MODE_SUPPORT
+	tristate "OPPO_SHIP_MODE_SUPPORT"
+	default n
+	depends on MFD_SPMI_PMIC
+	help
+	  Say Y to include support
+
+config OPPO_SHORT_IC_CHECK
+	tristate "OPPO_SHORT_IC CHECK SUPPORT"
+	default n
+	depends on MFD_SPMI_PMIC
+	help
+	  Say Y to include support
+	  
+config OPPO_SHORT_HW_CHECK
+	tristate "OPPO_SHORT_HW CHECK SUPPORT"
+	default n
+	depends on MFD_SPMI_PMIC
+	help
+	  Say Y to include support
+	  
+config OPPO_CHIP_SOC_NODE
+	bool "OPPO chip soc node"
+	help
+	  Say Y to include support
+config OPPO_SHORT_USERSPACE
+	bool "OPPO batt userspace"
+	help
+	  Say Y to include support
+
+config OPPO_SMOOTH_SOC
+	bool "OPPO SMOOTH SOC "
+	help
+	  Say Y to include support
+	  
+config OPPO_CALL_MODE_SUPPORT
+	bool "OPPO call mode support"
+	help
+	  Say Y to include support
+
+source "drivers/power/oppo/Kconfig"
+#endif
+
+source "drivers/power/avs/Kconfig"
+source "drivers/power/reset/Kconfig"
+source "drivers/power/supply/Kconfig"
