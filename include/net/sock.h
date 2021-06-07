@@ -357,7 +357,11 @@ struct sock {
 #define sk_incoming_cpu		__sk_common.skc_incoming_cpu
 #define sk_flags		__sk_common.skc_flags
 #define sk_rxhash		__sk_common.skc_rxhash
-
+#ifdef VENDOR_EDIT
+//Jiemin.Zhu@PSW.Android.OppoFeature.TrafficMonitor, 2018/06/28, Add for net comsuption statistics for
+//process which use the same uid
+#define sk_cmdline		__sk_common.skc_cmdline
+#endif /* VENDOR_EDIT */
 	socket_lock_t		sk_lock;
 	atomic_t		sk_drops;
 	int			sk_rcvlowat;

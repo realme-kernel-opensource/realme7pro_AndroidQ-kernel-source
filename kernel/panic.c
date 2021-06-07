@@ -34,7 +34,7 @@
 
 #ifdef VENDOR_EDIT
 //Liang.Zhang@PSW.TECH.BOOTUP, 2018/11/12, Add for monitor kernel panic
-#include "../../../../../vendor/oppo/oppo_phoenix/kernel/oppo_phoenix/oppo_phoenix.h"
+#include "../drivers/soc/oppo/oppo_phoenix/oppo_phoenix.h"
 static int kernel_panic_happened = 0;
 #endif
 
